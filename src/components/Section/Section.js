@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./Card/Card";
 import "./Section.css";
 export default function Section({ title }) {
+  //let title = "Action Movies";
   //console.log(props);
   return (
     <section className="Section">
