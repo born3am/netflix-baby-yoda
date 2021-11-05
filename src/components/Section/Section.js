@@ -10,6 +10,7 @@ export default function Section() {
         <Card />
         <Card />
         <Card />
+       
       </div>
     </section>
   );
