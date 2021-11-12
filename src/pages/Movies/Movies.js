@@ -7,7 +7,7 @@ export default function Movies() {
   return (
     <div>
       <Section title="Action Movies" data={actionMovies} />
-      <Section title="New Movies" />
+      <Section title="New Movies" data={newMovies} />
     </div>
   );
 }
