@@ -11,10 +11,20 @@
 
 .slick-arrow::before {
   background-color: black;
-  } 
+}
 
-  .Card:hover {
-    transform: scale(1.2);
-  }
+.Card:hover {
+  transform: scale(1.2);
+}
 
-  
+h4 {
+  /* font-size: 1.5rem; */
+  font-weight: bold;
+  background-color: rgb(0, 0, 0, 0.205);
+  color: white;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
