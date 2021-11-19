@@ -22,6 +22,8 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
+      
+      <div>test</div>
       <Footer />
     </>
   );
