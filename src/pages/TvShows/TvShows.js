@@ -2,6 +2,7 @@ import "./TvShows.css";
 import React from "react";
 import Section from "../../components/Section/Section";
 
+
 export default function TvShows() {
   return (
     <div>

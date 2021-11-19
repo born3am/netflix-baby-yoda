@@ -1,7 +1,20 @@
 .Card {
-  border: 1px solid blue;
-  height: 150px;
+  /* border: 1px solid blue; */
+  height: 200px;
   padding: 5px;
-  text-align: center;
-  width: 25%;
+  text-align: center bottom;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease-in-out;
 }
+
+.slick-arrow::before {
+  background-color: black;
+  } 
+
+  .Card:hover {
+    transform: scale(1.2);
+  }
+
+  

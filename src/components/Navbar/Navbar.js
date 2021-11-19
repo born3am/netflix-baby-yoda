@@ -1,12 +1,13 @@
 import "./Navbar.css";
 import React from "react";
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import logo from '../../assets/logo3.png';
 
 // rfc to create simple react component
 export default function Navbar() {
   return <nav className="Navbar">
 
-    <div className='Logo'><Link to='/'> Logo</Link></div>
+    <div className='Logo'><Link to='/'> <img width="100" src={logo} alt="Logo" /></Link></div>
     <ul className='NavList'>
       <li><Link to='/'>  Home </Link></li>
       <li><Link to='/tv-shows'> Tv Shows</Link> </li>
