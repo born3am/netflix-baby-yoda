@@ -1,24 +1,56 @@
 import "./TvShow.css";
-import React from "react";
-import { useParams } from "react-router-dom";
-
+import React, { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import tvShowsArray from "../../api/tvShows";
 export default function TvShow() {
-
   const { tvShowId } = useParams()
+  const [tvShowObject, setTvShowObject] = useState({});
+  const [tvShowSeason, setTvShowSeason] = useState({});
+
+  useEffect(() => {
+    const getTvShow = tvShowsArray.find((el) => el.id === tvShowId);
+    setTvShowObject(getTvShow);
+    setTvShowSeason(getTvShow.seasons[0]);
+  }, [tvShowId]);
 
 
-  console.log('====================================');
-  console.log('tvShowId', tvShowId);
-  console.log('====================================');
+
+
 
   return (
     <div>
 
-      <h1>TvShow Title</h1>
+      <h1>{tvShowObject?.title}</h1>
 
-      <div>Seasons</div>
-      <div>Episodes</div>
+      <div className="TvShow" >
+        <div className="Seasons" >
+          {tvShowObject?.seasons?.map((el) => (
+            <div key={el.id} className="Season" onClick={() => setTvShowSeason(el)} >{el.title}</div>
+          ))}
+        </div>
 
+        <div>
+          <div className="Episodes" >
+            {tvShowSeason?.episodes?.map((el) => (
+              <div key={el.id} className="Episode" >
+                <Link
+                  to={`/tv-show-episode/${tvShowObject.id}/${tvShowSeason.id}/${el.id}`} >
+                  <img
+                    className="EpisodeImage"
+                    src={el.image}
+                    alt=""
+                    width={100}
+                  />
+                </Link>
+                <span>{el.title}</span>
+              </div>
+
+
+            ))}
+
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
