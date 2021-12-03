@@ -1,54 +1,76 @@
-import React, { useState, useEffect } from 'react'
-import moviesData from "../../api/movies"
-import { Modal } from 'react-bootstrap'
-import { useParams } from "react-router"
-
-import "./Movie.css"
-
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import moviesData from "../../api/movies";
+import { Modal } from "react-bootstrap";
+import "./Movie.css";
 
 export default function Movie() {
-    // route ==> /movie/:id
+  const { pageId } = useParams();
+  // const [movieObject, setMovieObject] = useState({});
+  const [movieObject, setMovieObject] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
 
-    let { id } = useParams();
-    const [movie, setMovie] = useState();
-    const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    /** From React Docs:
+  The function passed to useEffect will run after the render is committed to the screen.
+*/
+    const targetMovie = moviesData.find(
+      (currentValue) => pageId === currentValue.id
+    );
+    setMovieObject(targetMovie);
+    //console.log("targetMovie ==> ", targetMovie);
+  }, [pageId]);
 
-    useEffect(() => {
-        const getMovie = moviesData.find(i => i.id === id);
-        setMovie(getMovie);
-    }, [id]);
+  //console.log("targetMovie outside ==> ", movieObject);
 
+  if (movieObject) {
+    return (
+      <div
+        className="Movie"
+        style={{ backgroundImage: `url(${movieObject.image})` }}
+      >
+        <h2>{movieObject.title}</h2>
+        <p>{movieObject.description}</p>
+        <span className="Play" onClick={() => setIsOpen(true)}>
+          PLAY
+        </span>
 
-
-    return movie ? (
-        <div className="Movie"
-            style={{ backgroundImage: `url(${movie.image})` }}
-        >
-            <h2>{movie.title}</h2>
-            <p>{movie.description}</p>
-            <span className="Play" onClick={setIsOpen} >PLAY</span>
-
-            <Modal
-          show={isOpen}
+        <Modal
           onHide={() => setIsOpen(false)}
+          show={isOpen}
+
           size="lg"
           aria-labelledby="contained-modal-title-vcenter"
           centered
         >
           <iframe
-            height="315"
-            src={movie.video}
+            height="400"
+            src={movieObject.video}
+
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullscreen
-
           ></iframe>
         </Modal>
-
-
-        </div>
-    ) : (
-        <div>Loading...</div>
-    )
+      </div>
+    );
+  } else {
+    return <div>Loading....</div>;
+  }
 }
+
+// useParams() => { pageId : '????' }
+/* return movieObject ? (
+    <div
+      className="Movie"
+      style={{ backgroundImage: `url(${movieObject.image})` }}
+    >
+      <h2>{movieObject.title}</h2>
+      <p>{movieObject.description}</p>
+      <span>PLAY</span>
+    </div>
+  ) : (
+    <div>Loading....</div>
+  );*/
+
