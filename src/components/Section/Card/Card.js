@@ -6,6 +6,7 @@ export default function Card({ movie, content }) {
 
   return (
     <Link to={`/${content}/${movie.id}`}>
+
       <article
         className="Card"
         style={{ backgroundImage: `url(${movie.image})` }}
@@ -14,6 +15,7 @@ export default function Card({ movie, content }) {
       </article>
     </Link>
   );
+
 }
 
 //params = {key:value}

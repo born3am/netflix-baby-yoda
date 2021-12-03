@@ -12,6 +12,7 @@ export default function Section({ title, data, content }) {
         {data?.map((currentValue) => (
           <Card content={content} key={currentValue.id} movie={currentValue} />
         ))}
+
       </Slider>
     </section>
   );

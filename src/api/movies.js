@@ -1,15 +1,5 @@
-/**
- * movie object
- {
-     id:xxx
-     title: ,
-     description: ,
-     image: ,
-     video: 
- }
- */
 
-// action movies ==> 6 items
+
 export const actionMovies = [
   {
     id: "123",

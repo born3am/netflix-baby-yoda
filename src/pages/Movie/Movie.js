@@ -38,6 +38,7 @@ export default function Movie() {
         <Modal
           onHide={() => setIsOpen(false)}
           show={isOpen}
+
           size="lg"
           aria-labelledby="contained-modal-title-vcenter"
           centered
@@ -45,6 +46,7 @@ export default function Movie() {
           <iframe
             height="400"
             src={movieObject.video}
+
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -71,3 +73,4 @@ export default function Movie() {
   ) : (
     <div>Loading....</div>
   );*/
+

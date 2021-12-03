@@ -4,6 +4,7 @@ import Section from "../../components/Section/Section";
 import { actionMovies, newMovies } from "../../api/movies";
 import { actionTvShows, newTvShows } from "../../api/tvShows";
 
+
 export default function Home() {
   // let content = "movie";
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         data={actionTvShows}
         content="tv-show"
       />
+
     </div>
   );
 }
