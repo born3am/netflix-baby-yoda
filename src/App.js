@@ -20,6 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/movie/:pageId" element={<Movie />} />
+
           <Route path="/tv-shows" element={<TvShows />} />
           <Route path="/tv-show/:tvShowId" element={<TvShow />} />
           <Route
@@ -28,6 +29,8 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
+      
+      <div>test</div>
       <Footer />
     </>
   );

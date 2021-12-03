@@ -3,6 +3,7 @@ import React from "react";
 import Section from "../../components/Section/Section";
 import { actionTvShows, newTvShows } from "../../api/tvShows";
 
+
 export default function TvShows() {
   return (
     <div>
