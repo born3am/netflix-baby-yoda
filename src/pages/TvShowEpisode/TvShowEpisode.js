@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import './TvShowEpisode.css'
 import { useParams } from 'react-router-dom'
 import tvShowsData from '../../api/tvShows'
-import tvShows from '../../api/tvShows'
 import { Modal } from "react-bootstrap";
 
 
