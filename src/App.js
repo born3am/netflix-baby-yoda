@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound/NotFound";
 import Movie from "./pages/Movie/Movie";
 import TvShow from "./pages/TvShow/TvShow";
 import TvShowEpisode from "./pages/TvShowEpisode/TvShowEpisode";
+import React from "react";
 
 function App() {
   return (
