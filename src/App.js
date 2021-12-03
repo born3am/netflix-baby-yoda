@@ -7,6 +7,8 @@ import Home from "./pages/Home/Home";
 import Movies from "./pages/Movies/Movies";
 import TvShows from "./pages/TvShows/TvShows";
 import NotFound from "./pages/NotFound/NotFound";
+import Movie from "./pages/Movie/Movie";
+import TvShow from "./pages/TvShow/TvShow";
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movies" element={<Movies />} />
+          <Route path="/movie/:pageId" element={<Movie />} />
           <Route path="/tv-shows" element={<TvShows />} />
+          <Route path="/tv-show/:tvShowId" element={<TvShow />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
