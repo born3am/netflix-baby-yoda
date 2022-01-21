@@ -26,8 +26,10 @@
 }
 
 .NavList li {
-  cursor: pointer;
+  cursor: pointer; 
 }
+
+
 
 .NavList li a {
   color: white;

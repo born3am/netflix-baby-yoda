@@ -17,6 +17,7 @@ export default function Navbar() {
             src="https://play-lh.googleusercontent.com/0rgPYj0GwZ6txpYZrzoMdhwzqg7vY6C9B-Ol7jlaz-Ox2rgpD4Tr82ZgDqkirrEohbGm=w412-h220-rw"
           />
         </Link>
+        
       </div>
       <ul className="NavList">
         <li>
