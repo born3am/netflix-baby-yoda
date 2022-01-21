@@ -10,9 +10,6 @@ export default function TvShow() {
   const [tvShowObject, setTvShowObject] = useState({});
   const [tvShowSeason, setTvShowSeason] = useState({});
 
-
-
-
   useEffect(() => {
 
     const getTvShowById = async () => {
@@ -23,7 +20,7 @@ export default function TvShow() {
     }
 
     getTvShowById();
-  }, [tvShowId, tvShowObject, tvShowSeason]);
+  }, [tvShowId]);
 
 
 
