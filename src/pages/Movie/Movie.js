@@ -1,27 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import moviesData from "../../api/movies";
+// import moviesData from "../../api/movies";
 import { Modal } from "react-bootstrap";
 import "./Movie.css";
 
+const backendURL = process.env.REACT_APP_BACKEND_URL;
+
 export default function Movie() {
+
+
   const { pageId } = useParams();
   // const [movieObject, setMovieObject] = useState({});
   const [movieObject, setMovieObject] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    /** From React Docs:
-  The function passed to useEffect will run after the render is committed to the screen.
-*/
-    const targetMovie = moviesData.find(
-      (currentValue) => pageId === currentValue.id
-    );
-    setMovieObject(targetMovie);
-    //console.log("targetMovie ==> ", targetMovie);
-  }, [pageId]);
 
-  //console.log("targetMovie outside ==> ", movieObject);
+
+
+
+  useEffect(() => {
+
+    const getMovieById = async () => {
+      const res = await fetch(`${backendURL}/movie/${pageId}`)
+      const data = await res.json()
+      setMovieObject(data)
+    }
+
+    getMovieById();
+  }, [pageId])
+
 
   if (movieObject) {
     return (
