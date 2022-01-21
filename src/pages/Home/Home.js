@@ -4,6 +4,9 @@ import Section from "../../components/Section/Section";
 // import { actionMovies, newMovies } from "../../api/movies";
 // import { actionTvShows, newTvShows } from "../../api/tvShows";
 
+
+
+
 const backendURL = process.env.REACT_APP_BACKEND_URL;
 
 export default function Home() {
