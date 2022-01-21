@@ -1,7 +1,7 @@
 import "./Navbar.css";
 import React from "react";
 import { Link } from "react-router-dom";
-import babyYoda from "../../assets/baby-yoda.png"
+import babyYoda1 from "../../assets/baby-yoda.png"
 
 // rfc to create simple react component
 export default function Navbar() {
@@ -17,7 +17,7 @@ export default function Navbar() {
             src="https://play-lh.googleusercontent.com/0rgPYj0GwZ6txpYZrzoMdhwzqg7vY6C9B-Ol7jlaz-Ox2rgpD4Tr82ZgDqkirrEohbGm=w412-h220-rw"
           />
         </Link>
-        
+
       </div>
       <ul className="NavList">
         <li>
@@ -36,7 +36,7 @@ export default function Navbar() {
           <img
             alt="baby yoda"
             width={100}
-            src={babyYoda}
+            src={babyYoda1}
           />
         </Link>
       </div>
